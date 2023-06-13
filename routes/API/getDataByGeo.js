@@ -7,7 +7,6 @@ const useFetch = require("../../utils/useFetch");
 const executeQuery = require("../../utils/executeQuery");
 const axios = require("axios");
 
-const verifyToken = require("../../auth/verifyToken");
 
 /* http://localhost:5000/api/data/?kota=Jakarta */
 router.get("/data/", async (req, res) => {
@@ -110,8 +109,6 @@ router.get("/data/", async (req, res) => {
             let dataPost = {
               data: input_data,
             };
-
-            // res.send(input_data);
 
             axios
               .post("https://model-apis-dl6yh3mkfa-et.a.run.app/predict", dataPost)
